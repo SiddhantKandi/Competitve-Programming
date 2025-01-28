@@ -14,18 +14,16 @@ int main() {
         string s;
         cin>>s;
 
-        char last = s[0];
-        char first = s[n-1];
-        for(int j=0;j<n/2;j++){
-            if(s[i] != s[n-i-1]){
-                if(j==0){
-                    size = size-2;
-                }
-                else if(s[j] == s[j-1]) {
-                    size = size - 2;
-                }
+        for(int i = 0;i<n/2;i++){
+            if(((s[i] - '0') & (s[n-i-1] -'0')) ==0 && s[i] !=s[n-i-1]){
+                size = size-2;
+            }
+            else{
+                break;
             }
         }
+
+        cout<<size<<"\n";
 
     }
 
