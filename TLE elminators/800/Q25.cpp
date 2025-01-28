@@ -21,7 +21,9 @@ int main() {
                 if(j==0){
                     size = size-2;
                 }
-                else if(s[j] ==s[j-1])
+                else if(s[j] == s[j-1]) {
+                    size = size - 2;
+                }
             }
         }
 
