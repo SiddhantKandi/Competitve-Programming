@@ -19,24 +19,33 @@ int main() {
         }
 
         cout<<"Yes"<<endl;
-        if(x==1){
-            if(n%k ==1){
-                int count = (n/2)-1+2;
-                cout<<count<<endl;
-                continue;
-            }
-            else{
-                cout<<(n/k)+(n%k)<<endl;
-                continue;
-            }
+       if(x==1){
+        vector<int> result;
+        if(n%2==1){
+            result.push_back(3);
+            n = n-3;
         }
-        else{
-            cout<<n<<endl;
-            for(int j=0;j<n;j++){
-                cout<<1<<" ";
-            }
-            cout<<endl;
+
+        while(n){
+            result.push_back(2);
+            n = n - 2;
         }
+
+        cout << result.size() << endl;
+           for(int val : result){
+            cout<<val<<" ";
+           }
+        cout << endl;
+
+       } 
+       else{
+        cout<<n<<"\n";
+        while(n){
+            cout<<1<<" ";
+            n=n-1;
+        }
+        cout<<"\n";
+       }
 
     }
 
