@@ -8,24 +8,51 @@ int main() {
     for(int i=0;i<t;i++){
         int n;
         cin>>n;
-
-        vector<int> A(n,0);
-        for(int j=0;j<n;j++){
-            cin>>A[j];
-        }
-
         int sum = 0;
-        int product  = 0;
-
-        for(int i : A){
-            sum+= i;
-            product *= i;
+        int product =1;
+        for(int j=0;j<n;j++){
+            int val;
+            cin>>val;
+            sum += val;
+            product = product * val;
         }
 
-        if(sum>=0 && product){
-            cout<<0<<endl;
+        if(sum >=0 && product == 1){
+            cout<<0<<"\n";
         }
-        else if()
+        else if(sum >=0 && product == -1){
+            cout<<1<<"\n";
+        }
+        else if(sum < 0 && product ==1 ){
+            int count = 0;
+            if(abs(sum)%2){
+                count = abs(sum)/2 +1;
+            }
+            else{
+                count = abs(sum)/2;
+            }
+            if(count%2 != 0){
+                cout<<count+1<<"\n";
+            }
+            else{
+                cout<<count<<"\n";
+            }
+        }
+         else if(sum < 0 && product == -1 ){
+            int count = 0;
+            if(abs(sum)%2){
+                count = abs(sum)/2 +1;
+            }
+            else{
+                count = abs(sum)/2;
+            }
+            if(count%2 == 0){
+                cout<<count+1<<"\n";
+            }
+            else{
+                cout<<count<<"\n";
+            }
+        }
         
 
     }
