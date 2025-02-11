@@ -1,0 +1,19 @@
+# Ignore system files
+.DS_Store
+
+
+# Allow only .cpp files and directories
+!*.cpp
+!README.md
+
+# Allow specific directories
+!CSES/
+!TLE eliminators/
+
+# Ensure only .cpp files inside specific nested directories
+CSES/Introductory problems/*
+TLE eliminators/800/*
+
+# Explicitly allow only .cpp files in these folders
+!CSES/Introductory problems/*.cpp
+!TLE eliminators/800/*.cpp
