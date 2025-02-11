@@ -13,7 +13,9 @@
 # Ensure only .cpp files inside specific nested directories
 CSES/Introductory problems/*
 TLE eliminators/800/*
+TLE eliminators/900/*
 
 # Explicitly allow only .cpp files in these folders
 !CSES/Introductory problems/*.cpp
 !TLE eliminators/800/*.cpp
+!TLE eliminators/900/*.cpp
