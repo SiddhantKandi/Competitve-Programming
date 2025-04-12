@@ -19,6 +19,4 @@ TLE eliminators/900/*
 !CSES/Introductory problems/*.cpp
 !TLE eliminators/800/*.cpp
 !TLE eliminators/900/*.cpp
-.vscode/settings.json
-.vscode/tasks.json
 .vscode
