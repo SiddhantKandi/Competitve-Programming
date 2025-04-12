@@ -21,3 +21,4 @@ TLE eliminators/900/*
 !TLE eliminators/900/*.cpp
 .vscode/settings.json
 .vscode/tasks.json
+.vscode
