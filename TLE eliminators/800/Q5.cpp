@@ -6,30 +6,25 @@ int main() {
     int t;
     cin>>t;
 
-    for(int i=0;i<t;i++){
+   while(t--){
+    int n;
+    cin>>n;
+    vector<int> store(n,0);
+    int mini = INT_MAX;
 
-        int n;
-        cin>>n;
-
-        vector<int> arr(n,0);
-
-        for(int j=0;j<n;j++){
-            cin>>arr[j];
-        }
-
-        int mini = INT_MAX;
-
-        for(int j=0;j<n;j++){
-            mini = min(mini,arr[j]);
-        }
-
-        if(arr[0]==mini){
-            cout<<"Yes"<<endl;
-        }
-        else{
-            cout<<"No"<<endl;
-        }
+    for(int i =0;i<n;i++){
+        cin>>store[i];
+        mini = min(mini,store[i]);
     }
+
+    if(mini == store[0]){
+        cout<<"Yes"<<endl;
+    }
+    else{
+        cout<<"No"<<endl;
+    }
+   } 
+    
 
     return 0;
 }

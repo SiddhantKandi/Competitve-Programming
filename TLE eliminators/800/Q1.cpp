@@ -2,33 +2,24 @@
 using namespace std;
 
 int main() {
-    int t;
-    cin>>t;
+   int t;
+   cin>>t;
+   while(t--){
+    int n,k;
+    cin>>n>>k;
+    vector<int> store(n,0);
+    for(int i = 0;i<n;i++){
+        cin>>store[i];
+    }
 
-    for(int i=0;i<t;i++){
-        int n,k;
-        cin>>n>>k;
-
-        vector<int> ans(n,0);
-        for(int i=0;i<n;i++){
-            cin>>ans[i];
-        }
-        if(k==1){
-            int increasing = 1;
-            for(int i=1;i<n;i++){
-                if(ans[i-1]> ans[i]){
-                    cout<<"No"<<endl;
-                    increasing = 0;
-                    break;
-                }
-            }
-            if(increasing){
-                cout<<"Yes"<<endl;
-            }
-        }
-        else if(k>=2){
-            cout<<"Yes"<<endl;
+    string ans = "Yes";
+    for(int i = 1;i<n && k==1;i++){
+        if(store[i-1] > store[i]){
+            ans = "No";
         }
     }
+
+    cout<<ans<<endl;
+   } 
     return 0;
 }

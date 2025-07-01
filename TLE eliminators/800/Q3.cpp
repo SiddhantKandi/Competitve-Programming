@@ -6,38 +6,43 @@ int main() {
     int t;
     cin>>t;
 
-    for(int i=0;i<t;i++){
-        int n;
-        cin>>n;
+   while(t--){
+    int n;
+    cin>>n;
+    vector<char> store(n,0);
 
-        string s;
-        // for(int j=0;j<n;j++){
-        //     cout<<"Enter the character"<<endl;
-        //     char ch;
-        //     cin>>ch;
-        //     s+= ch;
-        // }
-        cin>>s;
+    for(int i = 0;i<n;i++){
+        cin>>store[i];
+    }
 
-        int count=0;
-        int consecutive = 0;
-        for(int j=0;j<n;j++){
-            if(s[j]=='.'){
-                consecutive++;
-                if(consecutive>=3){
-                    cout<<2<<endl;
-                    break;
-                }
-                count++;
-            }
-            else{
-                consecutive=0;
-            }
+    int maxConsecutive = 0;
+    int consecutive = 0;
+    int total = 0;
+    for(int i =0;i<n;i++){
+        if(consecutive > 2){
+            maxConsecutive = max(maxConsecutive,consecutive);
+            break;
         }
-        if(consecutive<3){
-            cout<<count<<endl;
+
+        if(store[i] == '.'){
+            consecutive++;
+        }
+        else{
+            maxConsecutive = max(maxConsecutive,consecutive);
+            total+=consecutive;
+            consecutive = 0;
         }
     }
+    maxConsecutive = max(maxConsecutive,consecutive);
+
+    if(maxConsecutive > 2){
+        cout<<2<<endl;
+    }
+    else{
+        total+=consecutive;
+        cout<<total<<endl;
+    }
+   } 
 
     return 0;
 }

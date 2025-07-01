@@ -12,23 +12,22 @@ int main() {
 
         string x;
         cin>>x;
-
         string s;
         cin>>s;
 
         int ans = -1;
 
-        for(int i=0;i<=5;i++){
+        for(int i = 0;i<=5;i++){
             if(x.find(s) != string::npos){
-                ans= i;
+                ans = i;
                 break;
             }
 
             x.append(x);
         }
 
-        cout<<ans<<"\n";
-    }
+        cout<<ans<<endl;
+    } 
 
 
     return 0;

@@ -6,33 +6,20 @@ int main() {
     int t;
     cin>>t;
 
-    for(int i=0;i<t;i++){
+   while(t--){
+    int n;
+    cin>>n;
 
-        int num = 5;
-        int sum = 0;
+    int sum = 0;
 
-        for(int j=0;j<10;j++){
-            for(int k=1;k<=10;k++){
-                char ch;
-                cin>>ch;
-
-                if(ch=='X'){
-                    if(k<=5){
-                        sum+=k;
-                    }
-                    else{
-                        index = 10-k +1;
-                        if(index==5){
-                            
-                        }
-                    }
-                }
-            }
-        }
-
-        cout<<sum<<endl;
-        
+    for(int i = 0;i<n-1;i++){
+        int num;
+        cin>>num;
+        sum+=num;
     }
+
+    cout<<(-1*sum)<<endl;
+   } 
 
     return 0;
 }

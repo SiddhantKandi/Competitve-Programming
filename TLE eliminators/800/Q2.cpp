@@ -5,29 +5,23 @@ int main() {
     int t;
     cin>>t;
 
-    for(int i=0;i<t;i++){
-        int n,x;
-        cin>>n>>x;
-
-        vector<int> dis(n,0);
-        for(int i=0;i<n;i++){
-            cin>>dis[i];
-        }
-
-        int maxdis = INT_MIN;
-        int prev = 0;
-
-        for(int i=0;i<dis.size();i++){
-            int curr = dis[i];
-            maxdis = max(maxdis,curr-prev);
-            prev = curr;
-        }
-
-        maxdis = max(maxdis,(x-dis[n-1])*2);
-
-        cout<<maxdis<<endl;
-
+   while(t--){
+    int n,x;
+    cin>>n>>x;
+    
+    vector<int> dist(n,0);
+    
+    for(int i = 0;i<n;i++){
+        cin>>dist[i];
     }
+    int max_dis = max(dist[0],2*(x-dist[n-1]));
+
+    for(int i = 1;i<n;i++){
+      max_dis = max(max_dis,dist[i]-dist[i-1]); 
+    }
+
+    cout<<max_dis<<endl;
+   } 
 
     return 0;
 }
