@@ -9,22 +9,23 @@ int main() {
         int a,b,c;
         cin>>a>>b>>c;
 
-        if(c%2==0){
-            if(a<=b){
-                cout<<"Second"<<endl;
-            }
-            else{
-                cout<<"First"<<endl;
-            }
+       if(c%2 == 0){
+        if(b>=a){
+            cout<<"Second"<<endl;
         }
         else{
-            if(a<=b-1){
-                cout<<"Second"<<endl;
-            }
-            else{
-                cout<<"First"<<endl;
-            }
+            cout<<"First"<<endl;
         }
+
+       } 
+       else{
+        if(a>b-1){
+            cout<<"First"<<endl;
+        }
+        else{
+            cout<<"Second"<<endl;
+        }
+       }
     }
 
     return 0;

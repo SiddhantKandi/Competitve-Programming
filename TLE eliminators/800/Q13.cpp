@@ -5,45 +5,56 @@ int main() {
     int t;
     cin>>t;
 
-    for(int i=0;i<t;i++){
-        int n;
-        cin>>n;
+   while(t--){
+    int n;
+    cin>>n;
 
-        vector<int> A(n,0);
+    vector<int> a(n,0);
 
-        for(int j=0;j<n;j++){
-            cin>>A[j];
+    for(int i= 0;i<n;i++){
+        cin>>a[i];
+    }
+
+    sort(a.begin(),a.end(),greater<int>());
+
+    if(a[0] == a[n-1]){
+        cout<<-1<<endl;
+    }
+    else{
+        vector<int> b;
+        vector<int> c;
+
+        c.push_back(a[0]);
+
+
+        int j = 1;
+
+        while(a[j] == a[0]){
+            c.push_back(a[j]);
+            j++;
         }
 
-        sort(A.begin(),A.end());
-
-        vector<int> B;
-        vector<int> C;
-
-        for(int j=n-1;j>=0;j--){
-            if(C.size()==0 || C[0] == A[j]){
-                C.push_back(A[j]);
-            }
-            else{
-                B.push_back(A[j]);
-            }
+        for(int i = j;i<n;i++){
+            b.push_back(a[i]);
         }
 
-        if(C.size() == 0 || B.size() == 0){
-            cout<< -1 <<endl;
-            continue;
+        cout<<b.size()<<" "<<c.size()<<endl;
+
+        for(int i = 0;i<b.size();i++){
+            cout<<b[i]<<" ";
         }
 
-        cout<<B.size()<<" "<<C.size()<<endl;
-        for(int j=0;j<B.size();j++){
-            cout<<B[j]<<" ";
-        }
         cout<<endl;
-        for(int j=0;j<C.size();j++){
-            cout<<C[j]<<" ";
+
+        for(int i = 0;i<c.size();i++){
+            cout<<c[i]<<" ";
         }
+
         cout<<endl;
     }
+
+
+   } 
 
     return 0;
 }
