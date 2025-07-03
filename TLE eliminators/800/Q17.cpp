@@ -12,7 +12,7 @@ int main() {
     if(k==1 && x==1){
         cout<<"No"<<endl;
     }
-    else if(k==2 && x==1 && n%2 !=0){
+    else if(k<=2 && x==1 && n%2 !=0){
         cout<<"No"<<endl;
     }
     else{
@@ -25,26 +25,24 @@ int main() {
             cout<<endl;
         }
         else{
-            if(n%2 == 0){
-               cout<<n/2<<endl;
-                for(int i = 0;i<n;i+=2){
-                    cout<<2<<" ";
+                vector<int> result;
+                if(n%2 !=0){
+                    result.push_back(3);
+                    n = n-3;
+                }
+                while(n){
+                    result.push_back(2);
+                    n = n-2;
+                } 
+
+                cout<<result.size()<<endl;
+                for(int i = 0;i<result.size();i++){
+                    cout<<result[i]<<" ";
                 }
                 cout<<endl; 
             }
-            else{
-               cout<<1+(n-1)/2<<endl;
-               cout<<3<<" ";
-                for(int i = 0;i<n-3;i+=2){
-                    cout<<2<<" ";
-                }
-                cout<<endl;  
-            }
         }
     }
-
-
-   } 
 
     return 0;
 }

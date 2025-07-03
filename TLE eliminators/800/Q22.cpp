@@ -9,19 +9,17 @@ int main() {
         long long n,k;
         cin>>n>>k;
 
-        if(n%2!=0){
-            if(k%2 == 0){
-                cout<<"No"<<endl;
-                 continue;
-            }
-            else if(k>n){
-                cout<<"No"<<endl;
-                continue;
-            }
+        if(n%2 != 0 && k%2 ==0){
+            cout<<"No"<<endl;
+        }
+        else if(n%2 !=0 && k>n){
+            cout<<"No"<<endl;
+        }
+        else{
+            cout<<"Yes"<<endl;
         }
 
-        cout<<"Yes"<<endl;
-    }
+    }  
 
     return 0;
 }

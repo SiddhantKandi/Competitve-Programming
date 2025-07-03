@@ -6,24 +6,25 @@ int main() {
     cin>>t;
     
 
-    for(int i=0;i<t;i++){
-        int a,b,c,d;
-        cin>>a>>b>>c>>d;
+   while(t--){
+    long long a,b,c,d;
+    cin>>a>>b>>c>>d;
 
-       if( c > a && c-a > d-b){
-        cout<<-1<<"\n";
-       }
-       else if(d < b){
-        cout<<"-1"<<"\n";
-       }
-       else if(d==b){
-        cout<<abs(c-a)<<"\n";
-       }
-       else {
-        a = a + abs(d-b);
-        cout<<abs(c-a) + abs(d-b)<<"\n";
-       }
+    if(d<b){
+        cout<<-1<<endl;
     }
+    else if(c > a && c-a > d-b){
+        cout<<-1<<endl;
+    }
+    else{
+        long long newa = a+abs(b-d);
+
+        long long steps = abs(b-d) + abs(newa - c);
+
+        cout<<steps<<endl;
+    }
+    
+   } 
 
     return 0;
 }
